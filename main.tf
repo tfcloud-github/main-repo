@@ -6,13 +6,7 @@ terraform {
     version = "4.82.0"
 
        }
-  cloud {
-    organization = "db-dev"
 
-    workspaces {
-      name = "dev"
-    }
-  }
   }
   required_version = "0.14.11"
 }
