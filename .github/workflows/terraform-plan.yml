@@ -17,12 +17,12 @@ jobs:
         uses: hashicorp/setup-terraform@v1
         with:
           terraform_version: 1.0.0 # Specify the desired Terraform version
-          
+
       - name: Authenticate to Google Cloud
         uses: google-github-actions/auth@v1
         with:
         credentials_json: ${{ secrets.GOOGLE_CREDENTIALS }}
-          
+
       - name: Initialize Terraform
         run: terraform init
 
