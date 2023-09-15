@@ -20,7 +20,7 @@ jobs:
           
       - name: Configure GCP credentials
         run: |
-          echo  ${{ secrets.TF_API_TOKEN }} > gcp_key.json
+          echo  ${{ secrets.GOOGLE_CREDENTIALS }} > gcp_key.json
           gcloud auth activate-service-account --key-file=gcp_key.json
           
       - name: Initialize Terraform
