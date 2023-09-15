@@ -18,10 +18,10 @@ jobs:
         with:
           terraform_version: 1.0.0 # Specify the desired Terraform version
           
-      - name: Configure GCP credentials
-        run: 
-          echo  ${{ secrets.GOOGLE_CREDENTIALS }} > $PWD/gcp_key.json
-          gcloud auth activate-service-account  --key-file=$PWD/gcp_key.json
+      - name: Authenticate to Google Cloud
+        uses: google-github-actions/auth@v1
+        with:
+        credentials_json: ${{ secrets.GOOGLE_CREDENTIALS }}
           
       - name: Initialize Terraform
         run: terraform init
