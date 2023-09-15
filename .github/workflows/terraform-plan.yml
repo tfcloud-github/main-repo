@@ -19,7 +19,8 @@ jobs:
           terraform_version: 1.0.0 # Specify the desired Terraform version
           
       - name: Configure GCP credentials
-        run: |
+        run: 
+          shell: bash
           echo  ${{ secrets.GOOGLE_CREDENTIALS }} > gcp_key.json
           pwd
           gcloud auth activate-service-account lz-secerts@git-with-terraform.iam.gserviceaccount.com --key-file=gcp_key.json
